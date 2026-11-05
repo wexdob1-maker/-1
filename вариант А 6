@@ -1,0 +1,11 @@
+public class AssignmentInfo {
+    public static void main(String[] args) {
+        String developerSurname = "Красикова";
+        String receiveDateTime = "29.10.2026 13:00";
+        String submitDateTime = "04.11.2026 13:00";
+
+        System.out.println("Фамилия разработчика: " + developerSurname);
+        System.out.println("Дата и время получения задания: " + receiveDateTime);
+        System.out.println("Дата и время сдачи задания: " + submitDateTime);
+    }
+}
