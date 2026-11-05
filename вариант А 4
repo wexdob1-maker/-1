@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class PasswordCheck {
+    public static void main(String[] args) {
+        // Образец пароля (в реальном проекте не храните пароли в коде!)
+        String correctPassword = "secret123";
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введите пароль: ");
+        String inputPassword = scanner.nextLine();
+
+        if (inputPassword.equals(correctPassword)) {
+            System.out.println("Доступ разрешён!");
+        } else {
+            System.out.println("Неверный пароль.");
+        }
+
+        scanner.close();
+    }
+}
