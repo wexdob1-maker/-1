@@ -1,0 +1,66 @@
+
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+
+public class EvenOddNumbers {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введите количество чисел (n): ");
+        if (!scanner.hasNextInt()) {
+            System.out.println("Ошибка: нужно ввести целое число.");
+            scanner.close();
+            return;
+        }
+        int n = scanner.nextInt();
+
+        if (n <= 0) {
+            System.out.println("Количество чисел должно быть больше нуля.");
+            scanner.close();
+            return;
+        }
+
+        List<Integer> evens = new ArrayList<>();
+        List<Integer> odds = new ArrayList<>();
+
+        System.out.println("Введите " + n + " целых чисел:");
+        for (int i = 0; i < n; i++) {
+            while (!scanner.hasNextInt()) {
+                System.out.print("Некорректный ввод. Введите целое число: ");
+                scanner.next(); // пропускаем неверный токен
+            }
+            int num = scanner.nextInt();
+
+            if (num % 2 == 0) {
+                evens.add(num);
+            } else {
+                odds.add(num);
+            }
+        }
+
+        // Вывод чётных чисел
+        System.out.print("Чётные числа: ");
+        if (evens.isEmpty()) {
+            System.out.println("нет");
+        } else {
+            for (int num : evens) {
+                System.out.print(num + " ");
+            }
+            System.out.println();
+        }
+
+        // Вывод нечётных чисел
+        System.out.print("Нечётные числа: ");
+        if (odds.isEmpty()) {
+            System.out.println("нет");
+        } else {
+            for (int num : odds) {
+                System.out.print(num + " ");
+            }
+            System.out.println();
+        }
+
+        scanner.close();
+    }
+}
