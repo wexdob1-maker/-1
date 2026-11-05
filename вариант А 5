@@ -1,0 +1,31 @@
+public class SumAndProduct {
+    public static void main(String[] args) {
+        if (args.length == 0) {
+            System.out.println("Не переданы аргументы командной строки. Введите целые числа при запуске программы.");
+            return;
+        }
+
+        long sum = 0;
+        long product = 1;
+        boolean hasValidNumber = false;
+
+        for (String arg : args) {
+            try {
+                int number = Integer.parseInt(arg);
+                sum += number;
+                product *= number;
+                hasValidNumber = true;
+            } catch (NumberFormatException e) {
+                System.out.println("Ошибка: '" + arg + "' не является корректным целым числом. Пропущено.");
+            }
+        }
+
+        if (!hasValidNumber) {
+            System.out.println("Нет корректных целых чисел для расчёта.");
+            return;
+        }
+
+        System.out.println("Сумма: " + sum);
+        System.out.println("Произведение: " + product);
+    }
+}
